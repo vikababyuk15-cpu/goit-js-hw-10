@@ -4,21 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page 3</title>
+    <title>Page 2</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    
     <main>
       <div class="container">
+        <a class="back-link" href="./index.html">Go back</a>
         <h1 class="main-title">
-          <span class="main-title-gradient">Welcome</span> to page 3
         </h1>
-        <load src="./partials/back-link.html" />
+       <form class="form">
+  <div class="input-wrapper">
+    <label>
+      Delay (ms)
+      <input type="number" name="delay" required id="delay"/>
+    </label>
+  </div>
+
+  <fieldset class="state-fieldset">
+    <legend>State</legend>
+    <div class="radio-wrapper">
+      <label>
+        <input type="radio" name="state" value="fulfilled" required />
+        Fulfilled
+      </label>
+      <label>
+        <input type="radio" name="state" value="rejected" required />
+        Rejected
+      </label>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="subbutton">Create notification</button>
+</form>
+  </div>
       </div>
+      </section>
     </main>
 
-    <load src="./partials/footer.html" />
+    
     <script type="module" src="./js/2-snackbar.js"></script>
   </body>
 </html>
