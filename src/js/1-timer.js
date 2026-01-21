@@ -1,6 +1,9 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
+
 const input = document.querySelector('#datetime-picker');
 const startBtn = document.querySelector('button[data-start]');
 const daysValue = document.querySelector('[data-days]');
@@ -22,13 +25,18 @@ const options = {
     const selectedDate = selectedDates[0];
 
 
-    if (selectedDate.getTime() < Date.now()) {
-      window.alert("Please choose a date in the future");
+   if (selectedDate.getTime() <= Date.now()) {
+      iziToast.error({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        position: 'topRight', 
+      });
+      
       startBtn.disabled = true;
     } else {
       userSelectedDate = selectedDate;
       startBtn.disabled = false;
-      console.log("Выбранная дата зафиксирована:", userSelectedDate);
+      console.log(userSelectedDate);
     }
   },
 };
